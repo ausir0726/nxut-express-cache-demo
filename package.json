@@ -9,7 +9,9 @@
     "build": "nuxt build && babel server.js --out-file server.prod.js",
     "start": "cross-env NODE_ENV=production node server.prod.js",
     "precommit": "npm run lint",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "babel": {
     "presets": [
@@ -21,8 +23,9 @@
     "apicache": "^0.8.4",
     "axios": "^0.15.3",
     "cross-env": "^3.1.4",
-    "express": "^4.14.0",
-    "nuxt": "~0.10.5"
+    "express": "^4.16.0",
+    "nuxt": "~1.0.0",
+    "snyk": "^1.117.1"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
@@ -35,5 +38,6 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
     "nodemon": "^1.11.0"
-  }
+  },
+  "snyk": true
 }
